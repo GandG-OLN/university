@@ -1,34 +1,32 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "university",
+    'name': "uno",
 
     'summary': """
-        Test de creation de module""",
+        Short (1 phrase/line) summary of the module's purpose, used as
+        subtitle on modules listing or apps.openerp.com""",
 
     'description': """
-        Module pour la gestion d'une université
+        Long description of module's purpose
     """,
 
-    'author': "OLN #NADMAN",
-    'website': "",
+    'author': "My Company",
+    'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Project Management',
-    'version': '0.2',
+    'category': 'Uncategorized',
+    'version': '0.1',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
-        'views/etudiant_views.xml',
-        'views/professeur_views.xml',
-        'views/matiere_views.xml',
-        'views/classroom_views.xml',
-        'views/departement_views.xml',
+        # 'security/ir.model.access.csv',
+        'views/views.xml',
+        'views/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

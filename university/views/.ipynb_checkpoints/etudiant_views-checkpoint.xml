@@ -2,7 +2,7 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="etudiant.list">
+    <record model="ir.ui.view" id="etudiant_list">
       <field name="name">Etudiant list</field>
       <field name="model">university.etudiant</field>
       <field name="arch" type="xml">
@@ -19,20 +19,22 @@
       
      <!-- explicit Form view definition -->
 
-    <record model="ir.ui.view" id="etudiant.form">
+    <record model="ir.ui.view" id="etudiant_form">
       <field name="name">Etudiant form</field>
       <field name="model">university.etudiant</field>
       <field name="arch" type="xml">
         <form>
-          <field name="f_name"/>
-          <field name="l_name"/>
-          <field name="sexe"/>
-          <field name="cni"/>
-          <field name="birthday"/>
-          <field name="registration_date"/>
-          <field name="address"/>
-          <field name="email"/>
-          <field name="phone"/> 
+            <group>
+                <field name="f_name"/>
+                <field name="l_name"/>
+                <field name="sexe"/>
+                <field name="cni"/>
+                <field name="birthday"/>
+                <field name="registration_date"/>
+                <field name="address"/>
+                <field name="email"/>
+                <field name="phone"/> 
+            </group>
         </form>
       </field>
     </record>
@@ -40,7 +42,7 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="etudiant.action_window">
+    <record model="ir.actions.act_window" id="etudiant_action_window">
       <field name="name">etudiant window</field>
       <field name="res_model">university.etudiant</field>
       <field name="view_mode">tree,form</field>
@@ -59,7 +61,7 @@
     <!-- actions -->
 
     <menuitem name="Liste des etudiants" id="university_etudiant_list" parent="university_etudiant_cat"
-              action="etudiant.action_window"/>
+              action="etudiant_action_window"/>
  <!--   <menuitem name="Server to list" id="university" parent="university.menu_2"
               action="university.action_server"/> -->
 

@@ -2,38 +2,27 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="etudiant_list">
-      <field name="name">Etudiant list</field>
-      <field name="model">university.etudiant</field>
+    <record model="ir.ui.view" id="matiere_list">
+      <field name="name">Matiere list</field>
+      <field name="model">university.matiere</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="f_name"/>
-          <field name="l_name"/>
-          <field name="sexe"/>
-          <field name="cni"/>
-          <field name="birthday"/>
-          <field name="registration_date"/>
+          <field name="name"/>
+          <field name="code"/>
         </tree>
       </field>
     </record>
       
      <!-- explicit Form view definition -->
 
-    <record model="ir.ui.view" id="etudiant_form">
-      <field name="name">Etudiant form</field>
-      <field name="model">university.etudiant</field>
+    <record model="ir.ui.view" id="matiere_form">
+      <field name="name">Matiere form</field>
+      <field name="model">university.matiere</field>
       <field name="arch" type="xml">
         <form>
             <group>
-                <field name="f_name"/>
-                <field name="l_name"/>
-                <field name="sexe"/>
-                <field name="cni"/>
-                <field name="birthday"/>
-                <field name="registration_date"/>
-                <field name="address"/>
-                <field name="email"/>
-                <field name="phone"/> 
+                <field name="name"/>
+                <field name="code"/>
             </group>
         </form>
       </field>
@@ -42,9 +31,9 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="etudiant_action_window">
-      <field name="name">etudiant window</field>
-      <field name="res_model">university.etudiant</field>
+    <record model="ir.actions.act_window" id="matiere_action_window">
+      <field name="name">matiere window</field>
+      <field name="res_model">university.matiere</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -55,13 +44,13 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Etudiants" id="university_etudiant_cat" parent="university.menu_root"/>
+    <menuitem name="Matieres" id="university_matiere_cat" parent="university.menu_root"/>
  <!--   <menuitem name="Menu 2" id="university.menu_2" parent="university.menu_root"/> -->
 
     <!-- actions -->
 
-    <menuitem name="Liste des etudiants" id="university_etudiant_list" parent="university_etudiant_cat"
-              action="etudiant_action_window"/>
+    <menuitem name="Liste des matieres" id="university_matiere_list" parent="university_matiere_cat"
+              action="matiere_action_window"/>
  <!--   <menuitem name="Server to list" id="university" parent="university.menu_2"
               action="university.action_server"/> -->
 

@@ -2,9 +2,9 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="etudiant_list">
-      <field name="name">Etudiant list</field>
-      <field name="model">university.etudiant</field>
+    <record model="ir.ui.view" id="professeur_list">
+      <field name="name">Professeur list</field>
+      <field name="model">university.professeur</field>
       <field name="arch" type="xml">
         <tree>
           <field name="f_name"/>
@@ -12,16 +12,16 @@
           <field name="sexe"/>
           <field name="cni"/>
           <field name="birthday"/>
-          <field name="registration_date"/>
+          <field name="start_date"/>
         </tree>
       </field>
     </record>
       
      <!-- explicit Form view definition -->
 
-    <record model="ir.ui.view" id="etudiant_form">
-      <field name="name">Etudiant form</field>
-      <field name="model">university.etudiant</field>
+    <record model="ir.ui.view" id="professeur_form">
+      <field name="name">Professeur form</field>
+      <field name="model">university.professeur</field>
       <field name="arch" type="xml">
         <form>
             <group>
@@ -30,7 +30,7 @@
                 <field name="sexe"/>
                 <field name="cni"/>
                 <field name="birthday"/>
-                <field name="registration_date"/>
+                <field name="start_date"/>
                 <field name="address"/>
                 <field name="email"/>
                 <field name="phone"/> 
@@ -42,9 +42,9 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="etudiant_action_window">
-      <field name="name">etudiant window</field>
-      <field name="res_model">university.etudiant</field>
+    <record model="ir.actions.act_window" id="professeur_action_window">
+      <field name="name">professeur window</field>
+      <field name="res_model">university.professeur</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -55,13 +55,13 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Etudiants" id="university_etudiant_cat" parent="university.menu_root"/>
+    <menuitem name="Professeurs" id="university_professeur_cat" parent="university.menu_root"/>
  <!--   <menuitem name="Menu 2" id="university.menu_2" parent="university.menu_root"/> -->
 
     <!-- actions -->
 
-    <menuitem name="Liste des etudiants" id="university_etudiant_list" parent="university_etudiant_cat"
-              action="etudiant_action_window"/>
+    <menuitem name="Liste des professeurs" id="university_professeur_list" parent="university_professeur_cat"
+              action="professeur_action_window"/>
  <!--   <menuitem name="Server to list" id="university" parent="university.menu_2"
               action="university.action_server"/> -->
 
