@@ -14,4 +14,5 @@ class UniversityDepartement(models.Model):
 
     professeur_ids = fields.One2many(comodel_name='university.professeur', inverse_name='departement_id')
     matiere_ids = fields.One2many(comodel_name='university.matiere', inverse_name='departement_id')
+    etudiant_ids = fields.One2many(comodel='university.etudiant', inverse_name='departement_id')
     

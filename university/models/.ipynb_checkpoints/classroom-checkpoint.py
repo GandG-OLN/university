@@ -10,7 +10,7 @@ class UniversityClassroom(models.Model):
     name = fields.Char('Nom')
     code = fields.Char('Code')
     
-    etudiant_ids = fields.One2many(comodel_name='university.etudiant', inverse_name='classroom_id')
+    etudiant_ids = fields.Many2many('university.etudiant', relation='class_etudiant_rel')
     
     professeur_ids = fields.Many2many(comodel_name='university.professeur',
                                      relation='class_prof_rel',

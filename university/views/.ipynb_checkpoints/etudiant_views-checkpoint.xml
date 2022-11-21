@@ -36,7 +36,7 @@
                 <field name="email"/>
                 <field name="phone"/> 
                 <field name="departement_id"/>
-                <field name="classroom_id"/>
+                <!--<field name="room_id"/>-->
             </group>
         </form>
       </field>
