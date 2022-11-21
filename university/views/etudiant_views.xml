@@ -25,6 +25,7 @@
       <field name="arch" type="xml">
         <form>
             <group>
+                <field name="name" readonly="1"/>
                 <field name="f_name"/>
                 <field name="l_name"/>
                 <field name="sexe"/>
@@ -34,6 +35,8 @@
                 <field name="address"/>
                 <field name="email"/>
                 <field name="phone"/> 
+                <field name="departement_id"/>
+                <field name="classroom_id"/>
             </group>
         </form>
       </field>

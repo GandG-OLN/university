@@ -26,5 +26,5 @@ class UniversityProfesseur(models.Model):
     classroom_ids = fields.Many2many(comodel_name='university.classroom',
                                      relation='prof_class_rel',
                                      colum1='f_name',
-                                     colum2='name')
+                                     colum2='classroom_name')
     

@@ -24,6 +24,11 @@
                 <field name="name"/>
                 <field name="code"/>
             </group>
+            <notebook>
+                <page string="Liste des professeurs">
+                    <field name="professeur_ids"/>
+                </page>
+            </notebook>
         </form>
       </field>
     </record>

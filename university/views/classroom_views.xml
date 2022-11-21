@@ -2,7 +2,7 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="matiere_list">
+    <record model="ir.ui.view" id="classroom_list">
       <field name="name">Classroom list</field>
       <field name="model">university.classroom</field>
       <field name="arch" type="xml">
@@ -15,7 +15,7 @@
       
      <!-- explicit Form view definition -->
 
-    <record model="ir.ui.view" id="matiere_form">
+    <record model="ir.ui.view" id="classroom_form">
       <field name="name">Classroom form</field>
       <field name="model">university.classroom</field>
       <field name="arch" type="xml">
@@ -24,6 +24,17 @@
                 <field name="name"/>
                 <field name="code"/>
             </group>
+            <notebook>
+                <page string="Liste des professeurs">
+                    <field name="professeur_ids"/>
+                </page>
+                <page string="Liste des matieres">
+                    <field name="matiere_ids"/>
+                </page>
+                <page string="Liste des etudiants">
+                    <field name="etudiant_ids"/>
+                </page>
+            </notebook>
         </form>
       </field>
     </record>
