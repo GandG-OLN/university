@@ -10,3 +10,9 @@ class UniversityMatiere(models.Model):
     name = fields.Char('Nom')
     code = fields.Char('Code')
     
+    departement_id = fields.Many2one(comodel='university.departement')
+    
+    professeur_ids = fields.Many2many(comodel_name='university.professeur',
+                                     relation='mat_prof_rel',
+                                     colum1='name',
+                                     colum2='f_name')

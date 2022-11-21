@@ -16,3 +16,15 @@ class UniversityProfesseur(models.Model):
     email = fields.Char()
     phone = fields.Char()
     
+# Déclaration de champs many2one
+
+    departement_id = fields.Many2one(comodel_name='university.departement')
+    matiere_id = fields.Many2one(comodel_name='university.matiere')
+    
+# Déclaration de champs many2many
+
+    classroom_ids = fields.Many2many(comodel_name='university.classroom',
+                                     relation='prof_class_rel',
+                                     colum1='f_name',
+                                     colum2='name')
+    

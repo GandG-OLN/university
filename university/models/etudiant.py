@@ -5,6 +5,9 @@ from odoo import models, fields, api
 
 class UniversityEtudiant(models.Model):
     
+    
+# déclartion champs simple
+
     _name = 'university.etudiant'
      
     f_name = fields.Char('Prenom')
@@ -16,4 +19,13 @@ class UniversityEtudiant(models.Model):
     registration_date = fields.Datetime('Date d\'inscription')
     email = fields.Char()
     phone = fields.Char()
+    
+# déclaration champs Many2one 
+
+    departement_id = fields.Many2one(comodel='university.departement')
+    classroom_id = fields.Many2one(comodel='university.classroom')
+    
+# déclaration One2many
+
+
     
