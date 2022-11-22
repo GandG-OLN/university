@@ -23,7 +23,7 @@ class UniversityEtudiant(models.Model):
     
 #    déclaration champs Many2one 
 
-    departement_id = fields.Many2one(comodel='university.departement')
+    departement_id = fields.Many2one(comodel_name='university.departement')
     #room_id = fields.Many2one('university.classroom')
     
     @api.depends('f_name', 'l_name')

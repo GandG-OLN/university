@@ -23,9 +23,11 @@ class UniversityEtudiant(models.Model):
     
 #    déclaration champs Many2one 
 
-    departement_id = fields.Many2one(comodel='university.departement')
+    departement_id = fields.Many2one(comodel_name='university.departement')
     #room_id = fields.Many2one('university.classroom')
-    
+
+#    déclaration attribut rec_name
+
     @api.depends('f_name', 'l_name')
     def _get_full_name(self):
         for rec in self:

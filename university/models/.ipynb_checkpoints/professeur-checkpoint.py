@@ -28,3 +28,8 @@ class UniversityProfesseur(models.Model):
                                      colum1='f_name',
                                      colum2='classroom_name')
     
+    @api.depends('f_name', 'l_name')
+    def _get_full_name(self):
+        for rec in self:
+            if rec.f_name and rec.l_name:
+                rec.name = rec.f_name +" "+ rec.l_name
