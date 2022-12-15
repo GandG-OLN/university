@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data> 
+<template id="custom_stock_picking_report">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="gg_cash_report.custom_external_layout">
+                <div class="page" style="padding-top:0%">
+                    <br/>
+                    <div class="row">
+                        <div class="col-6" style="background-color:#f2f2f2;border-radius: 1em;margin-right: 2px;">
+                            <table>
+                                <tr>
+                                    <td>Date BL</td>
+                                    <td>:<![CDATA[&nbsp;]]></td>
+                                    <td><span t-field="o.date_done"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>REF BL</td>
+                                    <td>:<![CDATA[&nbsp;]]></td>
+                                    <td><span t-field="o.name"></span></td>
+                                </tr>
+                                <tr>
+                                    <t t-if="o.origin">
+                                        <td>Commande</td>
+                                        <td>:<![CDATA[&nbsp;]]></td>
+                                        <td><span t-field="o.origin"/></td>
+                                    </t>
+                                </tr>
+                                <t t-if="o.picking_type_code == 'internal'">
+                                    <tr>
+                                        <td>Origine</td>
+                                        <td>:<![CDATA[&nbsp;]]></td>
+                                        <td><span t-field="o.location_id"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Destination</td>
+                                        <td>:<![CDATA[&nbsp;]]></td>
+                                        <td><span t-field="o.location_dest_id"/></td>
+                                    </tr>
+                                </t>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>:<![CDATA[&nbsp;]]></td>
+                                    <td><span t-field="o.state"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="col-6" style="background-color:#f2f2f2;border-radius: 1em;">
+                            <table style="background-color:#f2f2f2;border-radius: 1em;border-collapse:collapse;">
+                                <tr>
+                                    <td>Client</td>
+                                    <td>:<![CDATA[&nbsp;]]></td>
+                                    <td><span t-field="o.partner_id"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Contact</td>
+                                    <td>:<![CDATA[&nbsp;]]></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Adresse</td>
+                                    <td>:<![CDATA[&nbsp;]]></td>
+                                    <td><span t-field="o.partner_id.street"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Code postale</td>
+                                    <td>:<![CDATA[&nbsp;]]></td>
+                                    <td><span t-field="o.partner_id.zip"></span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row " style=" margin-top:30px">
+                        <div class="col-12">
+                            <t t-if="o.picking_type_code == 'internal'">
+                                <p class="text-center" style="font-size:22px;font-style:italic;font-weight:bold">
+                                    <span><strong>Bon de livraison / Interne</strong></span>
+                                </p>
+                            </t>
+                            <t t-if="o.picking_type_code == 'incoming'">
+                                <p class="text-center" style="font-size:22px;font-style:italic;font-weight:bold">
+                                    <span><strong>Bon de livraison / Réception</strong></span>
+                                </p>
+                            </t>
+                            <t t-if="o.picking_type_code == 'outgoing'">
+                                <p class="text-center" style="font-size:22px;font-style:italic;font-weight:bold">
+                                    <span><strong>Bon de livraison</strong></span>
+                                </p>
+                            </t>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:50px">
+                        <div class="col-12">
+                            <br/>
+                            <table style="width:100%;border-collapse:collapse;">
+                                <thead>
+                                    <tr>
+                                        <th style="background-color:#f2f2f2; text-align:center; border-radius: 1em">Article</th>
+                                        <th style="background-color:#f2f2f2; text-align:center; border-radius: 1em">Qté demandée</th>
+                                        <th style="background-color:#f2f2f2; text-align:center; border-radius: 1em">Qté traitée</th>
+                                         <th style="background-color:#f2f2f2; text-align:center; border-radius: 1em">Unité de mesure</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.move_ids_without_package" t-as="line">
+                                        <tr>
+                                            <td style="border: 1px solid white;background-color:#f2f2f2; text-align:left; border-radius: 1em"><span t-field="line.product_id.name"/></td>
+                                            <td style="border: 1px solid white;background-color:#f2f2f2; text-align:center; border-radius: 1em"><span t-field="line.product_uom_qty"/></td>
+                                            <td style="border: 1px solid white;background-color:#f2f2f2; text-align:center; border-radius: 1em"><span t-field="line.quantity_done"/></td>
+                                            <td style="border: 1px solid white;background-color:#f2f2f2; text-align:center; border-radius: 1em"><span t-field="line.product_uom"/></td>
+                                        </tr>
+                                        </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br/>
+                </div>
+            </t>
+        </t>
+    </t>
+</template>
+      </data> 
+</odoo>
