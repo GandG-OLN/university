@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <template id="new_report">
+          <t t-call="web.header"/>
+              
+          <t t-call="web.footer"/>
+        </template>
+        <report id="new_report_pdf" model="my.model" name="Custom Report" report_type="qweb-pdf" template="oln_report.custom_report"/>
+
+
+    </data>
+</odoo>
