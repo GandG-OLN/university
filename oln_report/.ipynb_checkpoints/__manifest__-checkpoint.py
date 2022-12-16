@@ -25,10 +25,10 @@
     'data': [
         #'security/ir.model.access.csv',
         #'views/views.xml',
-        #'views/external_layout.xml',
+        'views/external_layout.xml',
         #'views/templates.xml',
-        'views/custom.xml',
-        'views/custom_report.xml',
+        #'views/custom.xml',
+        #'views/custom_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

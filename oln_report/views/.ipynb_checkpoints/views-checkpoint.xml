@@ -1,6 +1,6 @@
 <odoo>
   <data>
-    <record id="view_move_form_inherit" model="ir.ui.view">
+    <!--<record id="view_move_form_inherit" model="ir.ui.view">
         <field name="name">account.move.form inherit</field>
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_move_form" />
@@ -9,7 +9,7 @@
                 <field name="ref_bon_client" />
             </xpath>
         </field>
-      </record>
+      </record>-->
       
       <record id="view_sale_order_form_inherit_" model="ir.ui.view">
         <field name="name">sale.order.form inherit</field>
