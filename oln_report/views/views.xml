@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="oln_report.list">
+      <field name="name">oln_report list</field>
+      <field name="model">oln_report.oln_report</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="oln_report.action_window">
+      <field name="name">oln_report window</field>
+      <field name="res_model">oln_report.oln_report</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="oln_report.action_server">
+      <field name="name">oln_report server</field>
+      <field name="model_id" ref="model_oln_report_oln_report"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="oln_report" id="oln_report.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="oln_report.menu_1" parent="oln_report.menu_root"/>
+    <menuitem name="Menu 2" id="oln_report.menu_2" parent="oln_report.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="oln_report.menu_1_list" parent="oln_report.menu_1"
+              action="oln_report.action_window"/>
+    <menuitem name="Server to list" id="oln_report" parent="oln_report.menu_2"
+              action="oln_report.action_server"/>
+-->
+  </data>
+</odoo>
