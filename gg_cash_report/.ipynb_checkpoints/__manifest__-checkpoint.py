@@ -26,14 +26,14 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
+        #'views/templates.xml',
         'views/external_layout.xml',
-        'reports/report_purchase.xml',
-        'reports/report_sale_order.xml',
-        'reports/report_account_move.xml',
-        'reports/report_stock_picking.xml',
-        'reports/menu_report.xml',
-        'reports/report_sale_order_inherit.xml',
+        #'reports/report_purchase.xml',
+        #'reports/report_sale_order.xml',
+        #'reports/report_account_move.xml',
+        #'reports/report_stock_picking.xml',
+        #'reports/menu_report.xml',
+        #'reports/report_sale_order_inherit.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
