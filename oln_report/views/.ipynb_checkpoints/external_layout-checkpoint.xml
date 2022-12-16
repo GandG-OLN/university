@@ -1,0 +1,21 @@
+<odoo>
+  <data>
+      <template id="external_layout_header_inherit_cr" 
+            inherit_id="report.external_layout_header">
+            <xpath expr="//div[@class='header']" position="replace">
+                <div class="header">
+                    <img src='oln_report/static/src/img/gandg_header.png' align="center"/>
+                </div>
+            </xpath>
+        </template>
+        <template id="external_layout_footer_inherit_cr" 
+            inherit_id="report.external_layout_footer">
+            <xpath expr="//div[@class='footer']" position="replace">
+                <div class="footer">
+                    <img src='/oln_report/static/src/img/gandg_footer.png' align="center"/>
+                </div>
+            </xpath>
+        </template>
+
+  </data>
+</odoo>
