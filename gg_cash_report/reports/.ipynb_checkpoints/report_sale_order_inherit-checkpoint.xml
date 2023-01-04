@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <template id="sales_report_inherit"  inherit_id="sale.report_saleorder_document">
+            <xpath expr="//p[@id='fiscal_position_remark']" position="after">
+                <!--<t t-if="is_pro_forma">-->
+                    <div style="position:absolute;top:950px; page-break-inside: avoid; text-align: justify; font-size:11px">
+                        <p>L’enlèvement des articles doit être effectif au plus tard 15 jours francs après date de réception. Passé ce délai, G&G Professional Services se réserve le droit de remettre en vente lesdits articles à un autre client demandeur. Des produits de caractéristiques identiques seront mis à disposition du client lorsqu’il en exprimera la demande. Toutefois, cette nouvelle demande devra être formulée dans les délais raisonnables.</p>
+                    </div>
+                <!--</t>-->
+            </xpath>
+        </template>
+    </data>
+</odoo>

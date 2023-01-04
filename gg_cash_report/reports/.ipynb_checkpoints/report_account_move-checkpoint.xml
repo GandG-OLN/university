@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data> 
+        <template id="custom_account_move_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="gg_cash_report.custom_external_layout">
+                        <div class="page" style="padding-top:0%">
+                            <br/>
+                            <div class="row">
+                                <div class="col-6" style="background-color:#f2f2f2;border-radius: 1em;margin-right: 2px;">
+                                    <table>
+                                        <tr>
+                                            <td>Date Facture</td>
+                                            <td>:<![CDATA[&nbsp;]]></td>
+                                            <td><span t-field="o.invoice_date"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>REF Facture</td>
+                                            <td>:<![CDATA[&nbsp;]]></td>
+                                            <td><span t-field="o.name"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Modalité de Paiement</td>
+                                            <td>:<![CDATA[&nbsp;]]></td>
+                                            <td><span t-field="o.invoice_payment_term_id"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bon de Commande</td>
+                                            <td>:<![CDATA[&nbsp;]]></td>
+                                            <td><span t-field="o.invoice_origin"/></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="col-6" style="background-color:#f2f2f2;border-radius: 1em;">
+                                    <table style="background-color:#f2f2f2;border-radius: 1em;border-collapse:collapse;">
+                                        <tr>
+                                            <t t-if="o.move_type not in ['in_invoice', 'in_refund', 'in_receipt']">
+                                            <td>Client</td>
+                                            </t>
+                                            <t t-if="o.move_type not in ['out_invoice', 'out_refund', 'out_receipt']">
+                                                <td>Fournisseur</td>
+                                            </t>
+                                            <td>:<![CDATA[&nbsp;]]></td>
+                                            <td><span t-field="o.partner_id"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contact</td>
+                                            <td>:<![CDATA[&nbsp;]]></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Adresse</td>
+                                            <td>:<![CDATA[&nbsp;]]></td>
+                                            <td><span t-field="o.partner_id.street"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Code postale</td>
+                                            <td>:<![CDATA[&nbsp;]]></td>
+                                            <td><span t-field="o.partner_id.zip"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Référence Bon Client</td>
+                                            <td>:<![CDATA[&nbsp;]]></td>
+                                            <td><span t-field="o.ref_bon_client"></span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row " style=" margin-top:30px">
+                                <div class="col-12">
+                                    <p class="text-center" style="font-size:22px;font-style:italic;font-weight:bold">
+                                        <strong><span t-field="o.move_type"/></strong>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:50px">
+                                <div class="col-12">
+                                    <br/>
+                                    <table style="width:100%;border-collapse:collapse;">
+                                        <thead>
+                                            <tr>
+                                                <th style="background-color:#f2f2f2; text-align:center; border-radius: 1em">Référence</th>
+                                                <th style="background-color:#f2f2f2; text-align:center; border-radius: 1em">Désignation</th>
+                                                 <th style="background-color:#f2f2f2; text-align:center; border-radius: 1em">Qté</th>
+                                                 <th style="background-color:#f2f2f2; text-align:center; border-radius: 1em">Unité</th>
+                                                 <th style="background-color:#f2f2f2; text-align:center; border-radius: 1em">PU HT</th>
+                                                <th style="background-color:#f2f2f2; text-align:center; border-radius: 1em">Montant HT</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="o.invoice_line_ids" t-as="line">
+                                                <tr>
+                                                    <td style="border: 1px solid white;background-color:#f2f2f2; text-align:left; border-radius: 1em"><span t-field="line.product_id.default_code"/></td>
+                                                    <td style="border: 1px solid white;background-color:#f2f2f2; text-align:left; border-radius: 1em"><span t-field="line.name"/></td>
+                                                     <td style="border: 1px solid white;background-color:#f2f2f2; text-align:center; border-radius: 1em"><span t-field="line.quantity"/></td>
+                                                     <td style="border: 1px solid white;background-color:#f2f2f2; text-align:center; border-radius: 1em"><span t-field="line.product_uom_id"/></td>
+                                                     <td style="border: 1px solid white;background-color:#f2f2f2; text-align:center; border-radius: 1em"><span t-field="line.price_unit"/></td>
+                                                    <td style="border: 1px solid white;background-color:#f2f2f2; text-align:center; border-radius: 1em"><span t-field="line.price_subtotal"/></td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row justify-content-end"> 
+                                <div class="col-4" style="background-color:#f2f2f2;border-radius: 1em;">
+                                    <table class="table table-sm">
+                                        <tr>
+                                            <td name="td_subtotal_label"><strong>TOTAL HTVA</strong></td>
+                                            <td class="text-right">
+                                                <span t-field="o.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td name="td_taxes_label">TVA 18%</td>
+                                            <td class="text-right">
+                                                <span t-field="o.amount_tax" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td name="td_amount_total_label"><strong>TOTAL TTC</strong></td>
+                                            <td class="text-right">
+                                                <span t-field="o.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12" style="padding-left:40px;padding-top:40px">
+                                    <table style="table-collapse:collapse">
+                                        <tr>
+                                            <td style="font-size:12px">
+                                                <strong><span>Arrêtée la présente commande à la somme de : </span><span t-field="o.word_num"/></strong>
+                                            </td>
+                                        </tr>
+                                        <tr><td><![CDATA[&nbsp;]]></td></tr>
+                                        <tr>
+                                            <td>
+                                                <u>Garantie: </u>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+      </data> 
+</odoo>

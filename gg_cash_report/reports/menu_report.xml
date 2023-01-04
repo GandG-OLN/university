@@ -1,0 +1,47 @@
+<!--<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data> 
+        <record id="action_report_purchase" model="ir.actions.report">
+            <field name="name">Bon de commande fournisseur</field>
+            <field name="model">purchase.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">gg_cash_report.custom_purchase_report</field>
+            <field name="report_file">gg_cash_report.report_purchase</field>
+            <field name="print_report_name">'Bon de commande' </field>
+            <field name="binding_model_id" ref="purchase.model_purchase_order"/>
+            <field name="binding_type">report</field>
+        </record>
+        <record id="action_report_sale" model="ir.actions.report">
+            <field name="name">Bon de commande client</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">gg_cash_report.custom_sale_report</field>
+            <field name="report_file">gg_cash_report.report_sale</field>
+            <field name="print_report_name">'Bon de commande' </field>
+            <field name="binding_model_id" ref="sale_management.model_sale_order"/>
+            <field name="binding_type">report</field>
+        </record>
+        <record id="action_report_account_move" model="ir.actions.report">
+            <field name="name">Facture G&G</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">gg_cash_report.custom_account_move_report</field>
+            <field name="report_file">gg_cash_report.report_account_move</field>
+            <field name="print_report_name">'Facture' </field>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_type">report</field>
+        </record>
+        <record id="action_report_stock_picking" model="ir.actions.report">
+            <field name="name">Bon de Livraison G&G</field>
+            <field name="model">stock.picking</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">gg_cash_report.custom_stock_picking_report</field>
+            <field name="report_file">gg_cash_report.report_stock_picking</field>
+            <field name="print_report_name">'Bon de livraison' </field>
+            <field name="binding_model_id" ref="stock.model_stock_picking"/>
+            <field name="binding_type">report</field>
+        </record>
+        
+    </data>  
+</odoo>
+-->
